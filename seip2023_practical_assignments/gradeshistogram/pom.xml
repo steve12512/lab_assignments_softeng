@@ -99,7 +99,7 @@
                 <archive>
                     <manifest>
                         <addClasspath>true</addClasspath>
-                        <mainClass>YourMainClassPath</mainClass>
+                        <mainClass>lab_assignments_softeng\seip2023_practical_assignments\gradeshistogram\src\main\java\HistogramGenerator.java</mainClass>
                     </manifest>
                 </archive>
             </configuration>
