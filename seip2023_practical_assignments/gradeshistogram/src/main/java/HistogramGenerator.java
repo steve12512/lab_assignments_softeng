@@ -16,8 +16,7 @@ public class HistogramGenerator {
 		
 		int[] frequency = create_array();
 		edit_frequencies(frequency,args[0]);
-		JFreeChartXYLineChartDemo maven = new JFreeChartXYLineChartDemo();
-		maven.print_frequencies(frequency);
+		print_frequencies(frequency);
 	}
 
 	
@@ -53,8 +52,8 @@ public class HistogramGenerator {
 	private static void print_frequencies(int[] frequency) {
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		XYSeries data = new XYSeries("frequencies");
-		for (int i = 0; i < dataValues.length; i++) {
-			data.add(i, dataValues[i]);
+		for (int i = 0; i < frequency.length; i++) {
+			data.add(i, frequency[i]);
 		}
 		dataset.addSeries(data);
 		boolean legend = false; 
