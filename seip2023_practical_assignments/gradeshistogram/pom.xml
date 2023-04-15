@@ -20,7 +20,13 @@
   </properties>
 
   <dependencies>
-
+		
+	<dependecy>
+		<groupId>gr.aueb.dmst.stavros_kalelis</groupId>
+		<artifactId> seip2023_practical_assignments</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</dependecy>
+	
         <dependency>
           <groupId>junit</groupId>
           <artifactId>junit</artifactId>
@@ -34,13 +40,6 @@
           <artifactId>jfreechart</artifactId>
           <version>1.0.13</version>
       </dependency>
-	
-	<dependecy>
-		<groupId>gr.aueb.dmst.stavros_kalelis</groupId>
-		<artifactId> seip2023_practical_assignments</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</dependecy>
-
 
   </dependencies>
 

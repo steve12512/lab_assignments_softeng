@@ -1,7 +1,12 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.xy.XYSeries;
+import org.jfree.data.xy.XYSeriesCollection;
 
 
 public class HistogramGenerator {
@@ -11,6 +16,8 @@ public class HistogramGenerator {
 		
 		int[] frequency = create_array();
 		edit_frequencies(frequency,args[0]);
+		JFreeChartXYLineChartDemo maven = new JFreeChartXYLineChartDemo();
+		maven.print_frequencies(frequency);
 	}
 
 	
@@ -43,4 +50,20 @@ public class HistogramGenerator {
         }
 	}
 	
+	private static void print_frequencies(int[] frequency) {
+		XYSeriesCollection dataset = new XYSeriesCollection();
+		XYSeries data = new XYSeries("frequencies");
+		for (int i = 0; i < dataValues.length; i++) {
+			data.add(i, dataValues[i]);
+		}
+		dataset.addSeries(data);
+		boolean legend = false; 
+		boolean tooltips = false; 
+		boolean urls = false; 
+		JFreeChart chart = ChartFactory.createXYLineChart("Chart title", "x_axis title", "y_axis_title", dataset,
+				PlotOrientation.VERTICAL, legend, tooltips, urls);
+		ChartFrame frame = new ChartFrame("First", chart);
+		frame.pack();
+		frame.setVisible(true);
+	}
 }
