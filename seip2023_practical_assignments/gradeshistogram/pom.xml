@@ -3,12 +3,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  			<artifactId> seip2023_practical_assignments</artifactId>
+  
+	<parent>
+			<groupId>gr.aueb.dmst.stavros_kalelis</groupId>
+			<artifactId> seip2023_practical_assignments</artifactId>
+			<version>1.0-SNAPSHOT</version>
+	</parent>
 
-  <groupId>gr.aueb.dmst.stavros_kalelis</groupId>
-  <artifactId> gradeshistogram </artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging> pom </packaging>
-	
   <name>gradeshistogram</name>
   <description> Child project pom </description>
   <!-- FIXME change it to the project's website -->
@@ -19,13 +21,6 @@
     <maven.compiler.source>16</maven.compiler.source>
     <maven.compiler.target>16</maven.compiler.target>
   </properties>
-
-	<parent>
-			<groupId>gr.aueb.dmst.stavros_kalelis</groupId>
-			<artifactId> seip2023_practical_assignments</artifactId>
-			<version>1.0-SNAPSHOT</version>
-	</parent>
-
 
 
   <dependencies>
@@ -99,7 +94,7 @@
                 <archive>
                     <manifest>
                         <addClasspath>true</addClasspath>
-                        <mainClass>lab_assignments_softeng\seip2023_practical_assignments\gradeshistogram\src\main\java\HistogramGenerator.java</mainClass>
+                        <mainClass>HistogramGenerator</mainClass>
                     </manifest>
                 </archive>
             </configuration>
@@ -111,7 +106,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>YourMainClassPath</mainClass>
+                        <mainClass>HistogramGenerator</mainClass>
                     </manifest>
                 </archive>
                 <descriptorRefs>
@@ -129,43 +124,6 @@
             </executions>
         </plugin>
 
-		<!-- executable jar plugin here-->
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        <mainClass>/seip2023_practical_assignments/gradeshistogram/src/main/java/HistogramGenerator.java</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-        </plugin>
-
-      <!--- packaging external dependecies plugin here-->
-      <plugin>
-            <artifactId>maven-assembly-plugin</artifactId>
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>/seip2023_practical_assignments/gradeshistogram/src/main/java/HistogramGenerator.java</mainClass>
-                    </manifest>
-                </archive>
-                <descriptorRefs>
-                    <descriptorRef>jar-with-dependencies</descriptorRef>
-                </descriptorRefs>
-            </configuration>
-            <executions>
-                <execution>
-                    <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                    <phase>package</phase> <!-- bind to the packaging phase -->
-                    <goals>
-                        <goal>single</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
 
 
       </plugins>
