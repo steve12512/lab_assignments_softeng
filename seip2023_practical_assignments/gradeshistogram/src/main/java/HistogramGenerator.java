@@ -7,10 +7,17 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-
+/***
+ * 
+ * @author steve12512 The purpose of this class is to demonstrate a simple
+ *         scenario of a JFreeChart XYLine chart when reading a txt file with some integer grades as a command line argument.
+ * @since April 2023
+ */
 
 public class HistogramGenerator {
-	
+	/***
+	 * main class
+	 */
 	
 	public static void main(String[] args) {
 		
@@ -21,6 +28,9 @@ public class HistogramGenerator {
 
 	
 	private static int[] create_array() {
+		/***
+		 * creates an array that counts the frequency of each grade starting at number 0
+	 */
 		int[] frequency = new int[10];
 		for (int i: frequency) {
 			i = 0;
@@ -30,6 +40,12 @@ public class HistogramGenerator {
 	
 	
 	private static void edit_frequencies(int[] a, String text) {
+		/***
+		iterates through the file given as a command line argument. if there is no file given the program ends with error status 1
+		if the integer given file is correct, it iterated through it, reads every element and increases the number of times it has occured on the frequency array created previously
+		if there is any exception, it produces an exception message
+		*/
+
 		if (text == null) {
             System.err.println("Please provide the file name as an argument.");
             System.exit(1);
@@ -50,6 +66,9 @@ public class HistogramGenerator {
 	}
 	
 	private static void print_frequencies(int[] frequency) {
+		/***
+		 * creates and initialises the XYSeries objects required to portray the numbers of the frequency array in an XYSERIES chart
+	 */
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		XYSeries data = new XYSeries("frequencies");
 		for (int i = 0; i < frequency.length; i++) {
