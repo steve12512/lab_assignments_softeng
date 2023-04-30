@@ -12,7 +12,7 @@
 	</parent>
 
   <name>gradeshistogram</name>
-  <description> Child project pom </description>
+  <description> Child project pom that contains the HistogramGenerator class that is used to generate a XYSeries chart to represent the number a grade has occured. </description>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
