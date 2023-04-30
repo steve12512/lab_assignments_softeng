@@ -59,7 +59,7 @@ public class HistogramGenerator {
 		boolean legend = false; 
 		boolean tooltips = false; 
 		boolean urls = false; 
-		JFreeChart chart = ChartFactory.createXYLineChart("Chart title", "x_axis title", "y_axis_title", dataset,
+		JFreeChart chart = ChartFactory.createXYLineChart("Frequencies", "X", "Y", dataset,
 				PlotOrientation.VERTICAL, legend, tooltips, urls);
 		ChartFrame frame = new ChartFrame("First", chart);
 		frame.pack();
