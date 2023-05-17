@@ -1,0 +1,1 @@
+This maven module project is used to Test some classes.

@@ -32,7 +32,8 @@
     
   </dependencies>
 
-	<modules> 
+	<modules>
+    <module> unittesting </module> 
 		<module> gradeshistogram </module>
 	</modules>
 
